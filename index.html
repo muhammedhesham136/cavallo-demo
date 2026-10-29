@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cavallo Restaurant & Café · Nasr City</title>
+<meta name="description" content="Cavallo Restaurant & Café in Nasr City. Italian, grills and oriental kitchen, garden terrace, two branches, open late. Menu, branches and table booking on WhatsApp.">
+<meta name="theme-color" content="#0b0a09">
+<link rel="icon" href="images/crest.png">
+<link rel="preload" as="image" href="images/interior.jpg">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&family=Amiri:wght@400;700&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0a09; --bg-2:#12100e; --panel:#171411; --ivory:#f3ece0; --muted:#a39886; --soft:#cfc4b2;
+  --gold:#d4b98a; --gold-2:#ead7b0; --gold-3:#a8875a; --line:rgba(212,185,138,.2);
+  --serif:'Cormorant Garamond','Amiri',serif; --sans:'Jost','Cairo',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+[dir=rtl]{--serif:'Amiri','Cormorant Garamond',serif; --sans:'Cairo','Jost',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--bg);color:var(--ivory);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+[dir=rtl] body{font-weight:400}
+/* film grain over everything, very faint */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.005em}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{font-weight:700;line-height:1.35}
+em{font-style:italic;color:var(--gold-2)}
+[dir=rtl] em{font-style:normal}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,select{font:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.kicker{display:inline-flex;align-items:center;gap:14px;font-size:.74rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.kicker::before{content:"";width:36px;height:1px;background:currentColor;opacity:.7}
+[dir=rtl] .kicker{letter-spacing:0;font-size:.95rem}
+.center .kicker::after{content:"";width:36px;height:1px;background:currentColor;opacity:.7}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border:1px solid var(--gold);color:var(--bg);background:var(--gold);font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;overflow:hidden;transition:color .4s var(--ease),border-color .4s}
+[dir=rtl] .btn{letter-spacing:0;font-size:.95rem}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold-2);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.btn:hover::before{transform:scaleX(1);transform-origin:left}
+.btn span{position:relative}
+.btn.line{background:transparent;color:var(--ivory);border-color:rgba(243,236,224,.45)}
+.btn.line::before{background:var(--ivory)}
+.btn.line:hover{color:var(--bg);border-color:var(--ivory)}
+.btn.wa{background:#1f8f50;border-color:#1f8f50;color:#fff}
+.btn.wa::before{background:#25a75e}
+
+/* header */
+header{position:fixed;top:0;inset-inline:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+header.solid{background:rgba(11,10,9,.82);backdrop-filter:blur(16px) saturate(140%);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .4s var(--ease)}
+header.solid .nav{height:68px}
+.brand img{height:42px;width:auto;transition:height .4s var(--ease)}
+header.solid .brand img{height:34px}
+.brand{opacity:0;transform:translateY(-6px);transition:opacity .4s,transform .4s var(--ease)}
+header.solid .brand{opacity:1;transform:none}
+.nav-links{display:flex;gap:38px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+[dir=rtl] .nav-links{letter-spacing:0;font-size:1rem}
+.nav-links a{position:relative;padding:6px 0;color:var(--soft);transition:color .3s}
+.nav-links a::after{content:"";position:absolute;inset-inline:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s var(--ease)}
+.nav-links a:hover{color:var(--ivory)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-end{display:flex;gap:14px;align-items:center}
+.lang{background:none;border:0;color:var(--gold);cursor:pointer;font-size:.95rem;padding:6px 4px}
+.nav-end .btn{padding:11px 20px}
+@media(max-width:900px){.nav-links{display:none}}
+@media(max-width:520px){.nav-end .btn{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-rows:1fr auto;text-align:center;overflow:hidden;isolation:isolate}
+.hero .kicker::after{content:"";width:36px;height:1px;background:currentColor;opacity:.7}
+@media(max-width:520px){.hero .kicker::before,.hero .kicker::after{display:none}}
+.hero-bg{position:absolute;inset:-4%;background:url(images/interior.jpg) center 55%/cover no-repeat;z-index:-2;animation:kb 22s ease-out both}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(ellipse 55% 50% at 50% 48%,rgba(11,10,9,.5),rgba(11,10,9,.15) 75%,rgba(11,10,9,.55) 100%),
+  linear-gradient(180deg,rgba(11,10,9,.6) 0%,rgba(11,10,9,.12) 30%,rgba(11,10,9,.3) 70%,var(--bg) 100%)}
+.hero-inner{align-self:center;justify-self:center;padding:110px 24px 56px;max-width:900px}
+.hero .crest{width:min(260px,58vw);margin:0 auto 26px;filter:drop-shadow(0 6px 30px rgba(0,0,0,.6))}
+.hero h1{font-size:clamp(3rem,7vw,5.8rem);margin:20px 0 20px}
+[dir=rtl] .hero h1{font-size:clamp(2.4rem,6vw,4.6rem)}
+.hero p{max-width:52ch;margin:0 auto;color:var(--soft);font-size:1.08rem}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.hero-meta{border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(11,10,9,0),rgba(11,10,9,.6))}
+.hero-meta .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.hero-meta div{padding:20px 10px;text-align:center;border-inline-start:1px solid var(--line)}
+.hero-meta div:first-child{border-inline-start:0}
+.hero-meta b{display:block;font:500 1.7rem/1 var(--serif);color:var(--gold-2);direction:ltr;unicode-bidi:isolate}
+.hero-meta span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+[dir=rtl] .hero-meta span{letter-spacing:0;font-size:.85rem}
+@media(max-width:700px){.hero-meta .wrap{grid-template-columns:repeat(2,1fr)}.hero-meta div:nth-child(3){border-inline-start:0}.hero-meta div{padding:12px 6px}.hero-meta b{font-size:1.35rem}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:20px 0;background:var(--bg)}
+.marquee-track{display:flex;width:max-content;animation:mq 40s linear infinite}
+.marquee span{font:italic 500 1.6rem var(--serif);color:var(--gold);padding:0 28px;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.marquee span::after{content:"✦";font-style:normal;font-size:.8rem;color:var(--gold-3)}
+[dir=rtl] .marquee span{font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+[dir=rtl] .marquee-track{animation-name:mq-rtl}
+@keyframes mq-rtl{to{transform:translateX(50%)}}
+
+section{padding:130px 0}
+.head{max-width:640px;margin-bottom:56px}
+.head.center{text-align:center;margin-inline:auto}
+.head h2{font-size:clamp(2.6rem,5.4vw,4.2rem);margin:20px 0 18px}
+[dir=rtl] .head h2{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+.head p{color:var(--muted);font-size:1.05rem}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr 1.05fr;gap:90px;align-items:center}
+.story .sig{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.story .sig div{border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:520px){.story .sig{grid-template-columns:1fr;gap:18px}}
+.story .sig b{font:500 1.4rem var(--serif);display:block;color:var(--ivory)}
+.story .sig span{font-size:.88rem;color:var(--muted)}
+.collage{position:relative;padding:0 0 70px 70px}
+[dir=rtl] .collage{padding:0 70px 70px 0}
+.collage .big{position:relative;aspect-ratio:4/5;overflow:hidden}
+.collage .big::after{content:"";position:absolute;inset:18px;border:1px solid rgba(234,215,176,.45);pointer-events:none}
+.collage .small{position:absolute;bottom:0;inset-inline-start:0;width:46%;aspect-ratio:3/4;overflow:hidden;outline:10px solid var(--bg);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .tag{position:absolute;top:28px;inset-inline-end:-22px;background:var(--gold);color:var(--bg);padding:14px 18px;font:italic 500 1.1rem var(--serif);writing-mode:vertical-rl}
+[dir=rtl] .collage .tag{font-style:normal;writing-mode:horizontal-tb;inset-inline-end:16px}
+@media(max-width:900px){.story{grid-template-columns:1fr;gap:60px}.collage{padding:0 0 50px 50px}}
+
+/* signatures */
+.sigs{background:var(--bg-2)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:sig;padding-bottom:70px}
+.cards .card:nth-child(2){transform:translateY(70px)}
+.card .num{position:absolute;top:22px;inset-inline-start:26px;z-index:2;font:italic 500 1.1rem var(--serif);color:var(--gold-2);letter-spacing:.1em}
+.card .num::after{content:"";display:inline-block;width:28px;height:1px;background:var(--gold);vertical-align:middle;margin-inline-start:10px;opacity:.7}
+.card{position:relative;aspect-ratio:3/4;overflow:hidden;display:block}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .6s}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,10,9,.35) 0%,rgba(11,10,9,0) 22%,rgba(11,10,9,0) 45%,rgba(11,10,9,.92) 100%)}
+.card::before{content:"";position:absolute;inset:14px;border:1px solid rgba(234,215,176,0);z-index:3;transition:border-color .6s;pointer-events:none}
+.card:hover::before{border-color:rgba(234,215,176,.45)}
+.card:hover img{transform:scale(1.06);filter:brightness(1.05)}
+.card .cap{position:absolute;inset-inline:28px;bottom:26px;z-index:2}
+.card .cap small{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+[dir=rtl] .card .cap small{letter-spacing:0;font-size:.85rem}
+.card .cap h3{font-size:2rem;margin-top:6px}
+.card .cap p{font-size:.92rem;color:var(--soft);margin-top:8px;max-width:30ch}
+@media(max-width:900px){.cards{padding-bottom:0}.cards .card:nth-child(2){transform:none}.cards{grid-template-columns:1fr 1fr}.cards .card:last-child{grid-column:1/-1;aspect-ratio:16/10}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.cards .card{aspect-ratio:4/5}.cards .card:last-child{aspect-ratio:4/5}}
+
+/* menu */
+.menu{background:radial-gradient(ellipse 50% 40% at 50% 0%,rgba(212,185,138,.08),transparent 70%),var(--bg)}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 34px;margin-bottom:60px;border-bottom:1px solid var(--line)}
+.tab{position:relative;background:none;border:0;color:var(--muted);padding:14px 2px;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:color .3s}
+[dir=rtl] .tab{letter-spacing:0;font-size:1rem}
+.tab::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .4s var(--ease)}
+.tab:hover{color:var(--ivory)}
+.tab[aria-selected=true]{color:var(--gold-2)}
+.tab[aria-selected=true]::after{transform:scaleX(1)}
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:8px 80px;transition:opacity .35s}
+.dishes.fade{opacity:0}
+.dish{padding:20px 0}
+.dish .top{display:flex;align-items:baseline;gap:14px}
+.dish h3{font-size:1.65rem;white-space:nowrap}
+[dir=rtl] .dish h3{font-size:1.35rem}
+.dish .dots{flex:1;border-bottom:1px dotted rgba(212,185,138,.45);transform:translateY(-6px)}
+.dish .price{font:500 1.35rem var(--serif);color:var(--gold-2)}
+.dish .price small{font:.7rem var(--sans);letter-spacing:.15em;color:var(--muted);margin-inline-start:4px}
+.dish p{color:var(--muted);font-size:.92rem;margin-top:4px}
+.dish .star{color:var(--gold);font-size:.75rem;margin-inline-start:8px;vertical-align:middle}
+.menu-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:60px;padding-top:30px;border-top:1px solid var(--line)}
+.menu-foot p{color:var(--muted);font-size:.85rem;max-width:62ch}
+@media(max-width:820px){.dishes{grid-template-columns:1fr}.dish h3{white-space:normal}}
+
+/* quote band */
+.band{position:relative;padding:170px 0;text-align:center;overflow:hidden;isolation:isolate}
+.band-bg{position:absolute;inset:-20% 0;background:url(images/facade-wide.jpg) center/cover no-repeat;z-index:-2;will-change:transform}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,rgba(11,10,9,.72) 25%,rgba(11,10,9,.72) 75%,var(--bg) 100%)}
+.band blockquote{font:italic 500 clamp(2rem,4.6vw,3.6rem)/1.2 var(--serif);max-width:20ch;margin:26px auto 22px}
+[dir=rtl] .band blockquote{font-style:normal;line-height:1.5}
+.band .stars{color:var(--gold);letter-spacing:.3em;font-size:.95rem}
+.band cite{font-style:normal;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--soft)}
+[dir=rtl] .band cite{letter-spacing:0;font-size:.95rem}
+
+/* branches */
+.branches{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.branch{position:relative;border:1px solid var(--line);padding:46px 42px;background:linear-gradient(160deg,var(--panel),var(--bg-2));transition:border-color .4s,transform .5s var(--ease)}
+.branch:hover{border-color:rgba(212,185,138,.5);transform:translateY(-4px)}
+.branch .no{font:italic 500 4.4rem/1 var(--serif);color:transparent;-webkit-text-stroke:1px rgba(212,185,138,.45);position:absolute;top:26px;inset-inline-end:34px}
+.branch h3{font-size:2.3rem;margin-bottom:24px}
+.branch dl{display:grid;grid-template-columns:auto 1fr;gap:12px 26px;font-size:.98rem}
+.branch dt{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);padding-top:5px}
+[dir=rtl] .branch dt{letter-spacing:0;font-size:.9rem;padding-top:0}
+.branch dd{color:var(--soft)}
+.branch .acts{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.branch .btn{padding:12px 22px}
+@media(max-width:860px){.branches{grid-template-columns:1fr}.branch{padding:38px 28px}}
+
+/* reserve */
+.reserve{position:relative;background:var(--bg-2);overflow:hidden}
+.reserve-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.reserve-photo{position:relative;aspect-ratio:4/5;overflow:hidden}
+.reserve-photo img{width:100%;height:100%;object-fit:cover}
+.reserve-photo::after{content:"";position:absolute;inset:18px;border:1px solid rgba(234,215,176,.45)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:26px 24px;margin-top:40px}
+.field{display:grid;gap:4px}
+.field.full,form .btn,form small{grid-column:1/-1}
+.field label{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+[dir=rtl] .field label{letter-spacing:0;font-size:.9rem}
+.field input,.field select{background:transparent;border:0;border-bottom:1px solid rgba(243,236,224,.25);color:var(--ivory);padding:10px 0;font-size:1.05rem;border-radius:0;transition:border-color .3s;color-scheme:dark}
+.field select option{background:var(--bg-2)}
+.field input:focus,.field select:focus{outline:0;border-color:var(--gold)}
+form .btn{margin-top:10px;padding:18px}
+form small{color:var(--muted);font-size:.8rem;text-align:center}
+@media(max-width:900px){.reserve-grid{grid-template-columns:1fr;gap:56px}.reserve-photo{aspect-ratio:16/11;order:2}}
+@media(max-width:480px){form{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:70px 0 34px;text-align:center}
+footer img{width:170px;margin:0 auto 26px;opacity:.9}
+footer .links{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-bottom:40px}
+[dir=rtl] footer .links{letter-spacing:0;font-size:.95rem}
+footer .links a:hover{color:var(--gold-2)}
+footer .fine{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.8rem;color:#6f6656;border-top:1px solid rgba(212,185,138,.1);padding-top:26px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+/* the wipe goes on the inner image: a clipped observer target never reports as visible */
+.js .rv-img{opacity:0;transition:opacity .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv-img.in{opacity:1}
+.js .rv-img img{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s var(--ease),transform 1.4s var(--ease),filter .6s;transition-delay:var(--d,0s)}
+.js .rv-img.in img{clip-path:inset(0 0 0 0)}
+.hero .crest,.hero .kicker,.hero h1,.hero p,.hero-cta{animation:rise 1.4s var(--ease) both}
+.hero .kicker{animation-delay:.25s}.hero h1{animation-delay:.4s}.hero p{animation-delay:.55s}.hero-cta{animation-delay:.7s}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+/* preloader: crest on black, then the curtain lifts */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:clip-path 1.1s cubic-bezier(.76,0,.24,1);clip-path:inset(0 0 0 0)}
+#loader.done{clip-path:inset(0 0 100% 0);pointer-events:none}
+#loader .l-in{display:grid;justify-items:center;gap:30px}
+#loader img{width:min(220px,50vw);opacity:0;transform:scale(.94);animation:lcrest 1.2s var(--ease) .1s forwards}
+@keyframes lcrest{to{opacity:1;transform:none}}
+#loader .l-bar{width:140px;height:1px;background:var(--line);overflow:hidden}
+#loader .l-bar i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:lbar 1.3s var(--ease) .2s forwards}
+@keyframes lbar{to{transform:scaleX(1)}}
+html:not(.loaded) .hero-inner>*,html:not(.loaded) .hero-bg{animation-play-state:paused}
+
+/* gold light passing across the crest */
+.crest-wrap{position:relative;width:min(260px,58vw);margin:0 auto 26px;animation:rise 1.4s var(--ease) both}
+.crest-wrap .crest{width:100%;margin:0;animation:none}
+.crest-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(255,248,230,.9) 50%,transparent 60%) no-repeat;background-size:300% 100%;background-position:150% 0;
+  -webkit-mask:url(images/crest.png) center/contain no-repeat;mask:url(images/crest.png) center/contain no-repeat;animation:shine 7s 2.2s infinite}
+@keyframes shine{0%{background-position:150% 0}28%,100%{background-position:-50% 0}}
+
+/* scroll progress */
+.progress{position:absolute;top:0;inset-inline-start:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold-3),var(--gold-2));transform:scaleX(var(--p,0));transform-origin:left}
+[dir=rtl] .progress{transform-origin:right}
+
+/* mobile menu */
+.burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.burger i{position:absolute;inset-inline:10px;height:1px;background:var(--ivory);transition:transform .45s var(--ease),top .45s var(--ease)}
+.burger i:nth-child(1){top:17px}.burger i:nth-child(2){top:26px}
+.menu-open .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+.menu-open .burger i:nth-child(2){top:22px;transform:rotate(-45deg)}
+@media(max-width:900px){.burger{display:block}}
+.mnav{position:fixed;inset:0;z-index:45;background:rgba(11,10,9,.97);display:grid;align-content:center;justify-items:center;gap:6px;clip-path:circle(0 at calc(100% - 46px) 42px);transition:clip-path .8s cubic-bezier(.76,0,.24,1);visibility:hidden}
+[dir=rtl] .mnav{clip-path:circle(0 at 46px 42px)}
+.menu-open .mnav{clip-path:circle(150% at calc(100% - 46px) 42px);visibility:visible}
+[dir=rtl].menu-open .mnav{clip-path:circle(150% at 46px 42px)}
+.mnav a{font:500 2.6rem/1.3 var(--serif);opacity:0;transform:translateY(24px);transition:opacity .5s,transform .6s var(--ease),color .3s}
+.mnav a:hover{color:var(--gold-2)}
+.menu-open .mnav a{opacity:1;transform:none}
+.menu-open .mnav a:nth-child(2){transition-delay:.06s}.menu-open .mnav a:nth-child(3){transition-delay:.12s}.menu-open .mnav a:nth-child(4){transition-delay:.18s}
+.mnav .btn{margin-top:26px;font:500 .8rem var(--sans)}
+.menu-open{overflow:hidden}
+
+/* gallery strip */
+.gallery-sec{padding:120px 0 110px;background:var(--bg-2)}
+.gal-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.gal-nav{display:flex;gap:10px}
+.gal-nav button{width:54px;height:54px;border:1px solid var(--line);background:none;color:var(--gold-2);font-size:1.2rem;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.gal-nav button:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+[dir=rtl] .gal-nav button{transform:scaleX(-1)}
+.strip{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px max(24px,calc((100vw - 1200px)/2 + 24px)) 26px;scrollbar-width:none;cursor:grab}
+.strip::-webkit-scrollbar{display:none}
+.strip.drag{cursor:grabbing;scroll-snap-type:none}
+.g-item{flex:none;height:min(62vh,520px);scroll-snap-align:center;position:relative;overflow:hidden;border:0;padding:0;background:none;cursor:zoom-in}
+.g-item img{height:100%;width:auto;max-width:none;object-fit:cover;transition:transform 1.2s var(--ease),filter .6s;filter:saturate(.92)}
+.g-item:hover img{transform:scale(1.04);filter:saturate(1.05)}
+.g-item figcaption{position:absolute;inset-inline-start:20px;bottom:18px;font:italic 500 1.25rem var(--serif);color:var(--ivory);text-shadow:0 2px 14px rgba(0,0,0,.7);opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s var(--ease)}
+.g-item:hover figcaption{opacity:1;transform:none}
+@media(hover:none){.g-item figcaption{opacity:1;transform:none}}
+@media(max-width:600px){.g-item{height:58vh}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:150;background:rgba(6,5,4,.94);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.lb.open{opacity:1;visibility:visible}
+.lb img{max-width:min(92vw,1400px);max-height:84vh;object-fit:contain;transform:scale(.96);transition:transform .5s var(--ease)}
+.lb.open img{transform:none}
+.lb button{position:absolute;background:none;border:1px solid var(--line);color:var(--gold-2);width:52px;height:52px;cursor:pointer;font-size:1.3rem}
+.lb .x{top:22px;inset-inline-end:22px}
+.lb .pv{inset-inline-start:22px;top:50%;margin-top:-26px}
+.lb .nx{inset-inline-end:22px;top:50%;margin-top:-26px}
+[dir=rtl] .lb .pv,[dir=rtl] .lb .nx{transform:scaleX(-1)}
+.lb .cap{position:absolute;bottom:26px;inset-inline:0;text-align:center;font:italic 500 1.2rem var(--serif);color:var(--soft)}
+
+/* floating WhatsApp */
+.fab{position:fixed;inset-inline-end:22px;bottom:22px;z-index:40;width:58px;height:58px;border-radius:50%;background:#1f8f50;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.45);transform:scale(0);transition:transform .5s var(--ease)}
+.fab.show{transform:scale(1)}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25a75e;animation:ping 2.6s infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+.fab svg{width:28px;height:28px;fill:#fff}
+
+/* gold cursor (fine pointers only) */
+.cursor{position:fixed;top:0;left:0;z-index:300;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,opacity .3s;opacity:0}
+.cursor.on{opacity:1}
+.cursor.big{width:72px;height:72px;margin:-36px 0 0 -36px;background:rgba(212,185,138,.12)}
+@media(hover:none),(pointer:coarse){.cursor{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  #loader{display:none}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}.js .rv-img{opacity:1}.js .rv-img img{clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader" aria-hidden="true"><div class="l-in"><img src="images/crest.png" alt=""><div class="l-bar"><i></i></div></div></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<header id="hdr">
+  <div class="progress" id="progress"></div>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Cavallo home"><img src="images/crest.png" alt="Cavallo Restaurant & Café"></a>
+    <nav class="nav-links">
+      <a href="#story" data-i="navStory">Story</a>
+      <a href="#menu" data-i="navMenu">Menu</a>
+      <a href="#gallery" data-i="navGallery">Gallery</a>
+      <a href="#branches" data-i="navBranches">Branches</a>
+      <a href="#reserve" data-i="navReserve">Reserve</a>
+    </nav>
+    <div class="nav-end">
+      <button class="lang" id="langBtn" aria-label="Switch language">العربية</button>
+      <a href="#reserve" class="btn"><span data-i="ctaBook">Book a table</span></a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav">
+  <a href="#story" data-i="navStory">Story</a>
+  <a href="#menu" data-i="navMenu">Menu</a>
+  <a href="#gallery" data-i="navGallery">Gallery</a>
+  <a href="#branches" data-i="navBranches">Branches</a>
+  <a href="#reserve" class="btn"><span data-i="ctaBook">Book a table</span></a>
+</nav>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="crest-wrap"><img class="crest" src="images/crest.png" alt="Cavallo Restaurant & Café crest"></div>
+    <span class="kicker" data-i="heroK">Restaurant & Café · Nasr City</span>
+    <h1><span data-i="h1a">An evening</span> <em data-i="h1b">worth staying for</em></h1>
+    <p data-i="lead">Pastas, signature steaks and Italian pizza, served in velvet and gold from morning until late in the heart of Nasr City.</p>
+    <div class="hero-cta">
+      <a href="#reserve" class="btn"><span data-i="ctaBook">Book a table</span></a>
+      <a href="#menu" class="btn line"><span data-i="ctaMenu">Explore the menu</span></a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="wrap">
+      <div><b>4.3 ★</b><span data-i="m1">Google rating</span></div>
+      <div><b>1,600+</b><span data-i="m2">Guest reviews</span></div>
+      <div><b>2</b><span data-i="m3">Branches</span></div>
+      <div><b data-i="m4v">Late</b><span data-i="m4">Open every night</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="mq"></div></div>
+
+<section id="story">
+  <div class="wrap story">
+    <div>
+      <div class="head" style="margin-bottom:0">
+        <span class="kicker rv" data-i="storyK">Our story</span>
+        <h2 class="rv"><span data-i="storyT1">A garden table</span> <em data-i="storyT2">in the city</em></h2>
+        <p class="rv" data-i="storyP">Under the glow of the Cavallo sign, Nasr City slows down. Families gather for lunch on the terrace, friends linger over dessert and shakes, and the kitchen keeps serving long after the city goes quiet, from an extensive selection of pastas to signature steaks and veal.</p>
+      </div>
+      <div class="sig rv">
+        <div><b data-i="s1">Garden terrace</b><span data-i="s1p">Indoor & outdoor seating</span></div>
+        <div><b data-i="s2">Dine · Take away</b><span data-i="s2p">Delivery on Talabat</span></div>
+        <div><b data-i="s3">For every table</b><span data-i="s3p">Families, friends, business</span></div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="big rv-img"><img src="images/terrace.jpg" alt="Cavallo garden terrace with blossom trees and parasols" loading="lazy"></div>
+      <div class="small rv-img" style="--d:.25s"><img src="images/facade-wide.jpg" alt="The lit Cavallo sign at night" loading="lazy" style="object-position:28% center"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sigs">
+  <div class="wrap">
+    <div class="head center">
+      <span class="kicker rv" data-i="sigK">Signatures</span>
+      <h2 class="rv"><span data-i="sigT1">Made to</span> <em data-i="sigT2">linger over</em></h2>
+    </div>
+    <div class="cards">
+      <a href="#menu" class="card rv-img" data-cat="desserts"><span class="num">01</span><img src="images/desserts-plated.jpg" alt="Molten chocolate cake and tiramisu" loading="lazy" style="object-position:30% center"><div class="cap"><small data-i="c1k">Dessert bar</small><h3 data-i="c1">Lava cake & tiramisu</h3><p data-i="c1p">Warm chocolate, cold ice cream, and a tiramisu guests come back for.</p></div></a>
+      <a href="#menu" class="card rv-img" style="--d:.15s" data-cat="drinks"><span class="num">02</span><img src="images/blueberry-shake.jpg" alt="Blueberry milkshake on the terrace at night" loading="lazy"><div class="cap"><small data-i="c2k">After dark</small><h3 data-i="c2">Signature shakes</h3><p data-i="c2p">Tall, cold and generous. Made for long terrace nights.</p></div></a>
+      <a href="#menu" class="card rv-img" style="--d:.3s" data-cat="drinks"><span class="num">03</span><img src="images/latte.jpg" alt="Latte with a slice of cake" loading="lazy"><div class="cap"><small data-i="c3k">Coffee</small><h3 data-i="c3">Coffee, done right</h3><p data-i="c3p">Silky lattes and Turkish coffee from morning until late.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="menu">
+  <div class="wrap">
+    <div class="head center">
+      <span class="kicker rv" data-i="menuK">The menu</span>
+      <h2 class="rv"><span data-i="menuT1">From the</span> <em data-i="menuT2">kitchen</em></h2>
+    </div>
+    <div class="tabs rv" id="tabs" role="tablist"></div>
+    <div class="dishes" id="dishes"></div>
+    <div class="menu-foot">
+      <p data-i="menuNote">Pizza names and prices (EGP) are from Cavallo's printed menu. Other sections are a preview for this design concept and will be completed with the full menu.</p>
+      <a class="btn line" target="_blank" rel="noopener" href="https://www.talabat.com/egypt/restaurants?q=cavallo"><span data-i="talabat">Order on Talabat</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="band-bg" id="bandBg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="stars" data-i="rating">4.3 ★ · 1,657 Google reviews</div>
+    <blockquote data-i="quote">“The latte I had there was one of the best.”</blockquote>
+    <cite data-i="cite">Guest review · Google Maps</cite>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-sec">
+  <div class="wrap gal-top">
+    <div class="head" style="margin-bottom:34px">
+      <span class="kicker rv" data-i="galK">Gallery</span>
+      <h2 class="rv"><span data-i="galT1">Moments at</span> <em>Cavallo</em></h2>
+    </div>
+    <div class="gal-nav rv"><button id="galPrev" aria-label="Previous">←</button><button id="galNext" aria-label="Next">→</button></div>
+  </div>
+  <div class="strip" id="strip">
+    <figure class="g-item"><img src="images/interior.jpg" alt="Teal velvet Cavallo chairs and gold frames at the Abbas El Akkad branch" loading="lazy" draggable="false"><figcaption data-i="g0">Inside Abbas El Akkad</figcaption></figure>
+    <figure class="g-item"><img src="images/facade-night.jpg" alt="Cavallo terrace at night" loading="lazy" draggable="false"><figcaption data-i="g1">The terrace after dark</figcaption></figure>
+    <figure class="g-item"><img src="images/desserts-plated.jpg" alt="Lava cake and tiramisu" loading="lazy" draggable="false"><figcaption data-i="g2">Lava cake & tiramisu</figcaption></figure>
+    <figure class="g-item"><img src="images/terrace.jpg" alt="Garden seating under blossom trees" loading="lazy" draggable="false"><figcaption data-i="g3">Afternoons in the garden</figcaption></figure>
+    <figure class="g-item"><img src="images/blueberry-shake.jpg" alt="Blueberry milkshake" loading="lazy" draggable="false"><figcaption data-i="g4">Blueberry shake</figcaption></figure>
+    <figure class="g-item"><img src="images/facade-wide.jpg" alt="The lit Cavallo sign" loading="lazy" draggable="false"><figcaption data-i="g5">Under the Cavallo sign</figcaption></figure>
+  </div>
+</section>
+
+<section id="branches">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker rv" data-i="brK">Visit us</span>
+      <h2 class="rv"><span data-i="brT1">Two addresses,</span> <em data-i="brT2">one Cavallo</em></h2>
+    </div>
+    <div class="branches">
+      <article class="branch rv">
+        <span class="no">I</span>
+        <h3 data-i="b1">Child Park</h3>
+        <dl>
+          <dt data-i="addr">Address</dt><dd data-i="b1a">Child Park, 6th District, Nasr City, Cairo</dd>
+          <dt data-i="hours">Hours</dt><dd data-i="hoursV">Daily, 10 AM until late</dd>
+          <dt data-i="phone">Phone</dt><dd><a href="tel:+201226009003" dir="ltr">012 2600 9003</a></dd>
+        </dl>
+        <div class="acts">
+          <a class="btn" href="tel:+201226009003"><span data-i="call">Call</span></a>
+          <a class="btn line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Cavallo+Restaurant+%26+Cafe+Child+Park+Nasr+City"><span data-i="dir">Directions</span></a>
+        </div>
+      </article>
+      <article class="branch rv" style="--d:.15s">
+        <span class="no">II</span>
+        <h3 data-i="b2">Abbas El Akkad</h3>
+        <dl>
+          <dt data-i="addr">Address</dt><dd data-i="b2a">Level's Mall, Abbas El Akkad, Nasr City, Cairo</dd>
+          <dt data-i="hours">Hours</dt><dd data-i="hoursV">Daily, 10 AM until late</dd>
+          <dt data-i="phone">Phone</dt><dd><a href="tel:+201044077788" dir="ltr">010 4407 7788</a></dd>
+        </dl>
+        <div class="acts">
+          <a class="btn" href="tel:+201044077788"><span data-i="call">Call</span></a>
+          <a class="btn line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Cavallo+Abbas+El+Akkad+Nasr+City"><span data-i="dir">Directions</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="reserve" class="reserve">
+  <div class="wrap reserve-grid">
+    <div class="reserve-photo rv-img"><img src="images/facade-night.jpg" alt="Cavallo terrace at night" loading="lazy" style="object-position:30% center"></div>
+    <div>
+      <div class="head" style="margin-bottom:0">
+        <span class="kicker rv" data-i="resK">Reservations</span>
+        <h2 class="rv"><span data-i="resT1">Your table</span> <em data-i="resT2">awaits</em></h2>
+        <p class="rv" data-i="resP">Choose a branch, a time and your party size. Your request reaches us on WhatsApp and we confirm right away.</p>
+      </div>
+      <form id="bookForm" class="rv">
+        <div class="field full"><label for="fName" data-i="fName">Name</label><input id="fName" required autocomplete="name"></div>
+        <div class="field"><label for="fBranch" data-i="fBranch">Branch</label><select id="fBranch"></select></div>
+        <div class="field"><label for="fGuests" data-i="fGuests">Guests</label><select id="fGuests"></select></div>
+        <div class="field"><label for="fDate" data-i="fDate">Date</label><input id="fDate" type="date" required></div>
+        <div class="field"><label for="fTime" data-i="fTime">Time</label><input id="fTime" type="time" value="20:00" required></div>
+        <button class="btn wa" type="submit"><span data-i="fSend">Request on WhatsApp</span></button>
+        <small data-i="fNote">Opens WhatsApp with your request ready. Nothing is sent until you press send.</small>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="images/crest.png" alt="Cavallo">
+    <div class="links">
+      <a href="#menu" data-i="navMenu">Menu</a>
+      <a href="#reserve" data-i="navReserve">Reserve</a>
+      <a target="_blank" rel="noopener" href="https://www.instagram.com/cavallo_eg/">Instagram</a>
+      <a target="_blank" rel="noopener" href="https://www.facebook.com/search/top?q=Cavallo%20Restaurant%20%26%20Cafe">Facebook</a>
+      <a target="_blank" rel="noopener" href="https://www.talabat.com/egypt/restaurants?q=cavallo">Talabat</a>
+    </div>
+    <div class="fine">
+      <span>© Cavallo Restaurant & Café · Nasr City</span>
+      <span data-i="demo">Design concept by Muhammed Hesham · not the official website</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <img id="lbImg" alt="">
+  <div class="cap" id="lbCap"></div>
+  <button class="x" id="lbX" aria-label="Close">✕</button>
+  <button class="pv" id="lbPv" aria-label="Previous">←</button>
+  <button class="nx" id="lbNx" aria-label="Next">→</button>
+</div>
+
+<a class="fab" id="fab" target="_blank" rel="noopener" href="https://wa.me/201000872872" aria-label="WhatsApp Cavallo">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+const BOOKING_PHONE = "201000872872";
+const T = {
+  en:{navStory:"Story",navMenu:"Menu",navBranches:"Branches",navReserve:"Reserve",ctaBook:"Book a table",ctaMenu:"Explore the menu",
+    heroK:"Restaurant & Café · Nasr City",h1a:"An evening",h1b:"worth staying for",
+    lead:"Pastas, signature steaks and Italian pizza, served in velvet and gold from morning until late in the heart of Nasr City.",
+    m1:"Google rating",m2:"Guest reviews",m3:"Branches",m4v:"Late",m4:"Open every night",
+    marquee:["Italian kitchen","Grills & seafood","Oriental classics","Garden terrace","Desserts & shakes","Open late"],
+    storyK:"Our story",storyT1:"A garden table",storyT2:"in the city",
+    storyP:"Under the glow of the Cavallo sign, Nasr City slows down. Families gather for lunch on the terrace, friends linger over dessert and shakes, and the kitchen keeps serving long after the city goes quiet, from an extensive selection of pastas to signature steaks and veal.",
+    s1:"Garden terrace",s1p:"Indoor & outdoor seating",s2:"Dine · Take away",s2p:"Delivery on Talabat",s3:"For every table",s3p:"Families, friends, business",tag:"Nasr City",
+    sigK:"Signatures",sigT1:"Made to",sigT2:"linger over",
+    c1k:"Dessert bar",c1:"Lava cake & tiramisu",c1p:"Warm chocolate, cold ice cream, and a tiramisu guests come back for.",
+    c2k:"After dark",c2:"Signature shakes",c2p:"Tall, cold and generous. Made for long terrace nights.",
+    c3k:"Coffee",c3:"Coffee, done right",c3p:"Silky lattes and Turkish coffee from morning until late.",
+    menuK:"The menu",menuT1:"From the",menuT2:"kitchen",egp:"EGP",
+    menuNote:"Pizza names and prices (EGP) are from Cavallo's printed menu. Other sections are a preview for this design concept and will be completed with the full menu.",
+    talabat:"Order on Talabat",navGallery:"Gallery",galK:"Gallery",galT1:"Moments at",g0:"Inside Abbas El Akkad",
+    g1:"The terrace after dark",g2:"Lava cake & tiramisu",g3:"Afternoons in the garden",g4:"Blueberry shake",g5:"Under the Cavallo sign",g6:"The latte guests talk about",rating:"4.3 ★ · 1,657 Google reviews",quote:"“The latte I had there was one of the best.”",cite:"Guest review · Google Maps",
+    brK:"Visit us",brT1:"Two addresses,",brT2:"one Cavallo",b1:"Child Park",b1a:"Child Park, 6th District, Nasr City, Cairo",
+    b2:"Abbas El Akkad",b2a:"Level's Mall, Abbas El Akkad, Nasr City, Cairo",addr:"Address",hours:"Hours",hoursV:"Daily, 10 AM until late",phone:"Phone",call:"Call",dir:"Directions",
+    resK:"Reservations",resT1:"Your table",resT2:"awaits",resP:"Choose a branch, a time and your party size. Your request reaches us on WhatsApp and we confirm right away.",
+    fName:"Name",fBranch:"Branch",fGuests:"Guests",fDate:"Date",fTime:"Time",fSend:"Request on WhatsApp",
+    fNote:"Opens WhatsApp with your request ready. Nothing is sent until you press send.",
+    demo:"Design concept by Muhammed Hesham · not the official website",
+    guest:n=>n===1?"1 guest":n+" guests",
+    msgHi:"Hello Cavallo, I'd like to reserve a table:",msgName:"Name",msgBranch:"Branch",msgGuests:"Guests",msgWhen:"When",
+    cats:{pizza:"Pizza",italian:"Pasta",grills:"Grills & Sea",oriental:"Oriental",desserts:"Desserts",drinks:"Drinks"}},
+  ar:{navStory:"قصتنا",navMenu:"المنيو",navBranches:"الفروع",navReserve:"احجز",ctaBook:"احجز طاولة",ctaMenu:"اكتشف المنيو",
+    heroK:"مطعم وكافيه · مدينة نصر",h1a:"سهرة",h1b:"تستاهل تطوّل",
+    lead:"باستا، ستيك مميز وبيتزا إيطالي، وسط القطيفة والدهب من الصبح لآخر الليل في قلب مدينة نصر.",
+    m1:"تقييم جوجل",m2:"تقييم من الزوار",m3:"فروع",m4v:"متأخر",m4:"مفتوح كل ليلة",
+    marquee:["مطبخ إيطالي","مشويات وسي فود","أكلات شرقية","تراس في الجنينة","حلويات وميلك شيك","مفتوح لآخر الليل"],
+    storyK:"قصتنا",storyT1:"طاولة في جنينة",storyT2:"وسط المدينة",
+    storyP:"تحت نور لافتة كافالو، مدينة نصر بتهدى. العائلات بتتجمع على الغدا في التراس، والأصحاب بيقعدوا على الحلو والميلك شيك، والمطبخ شغال لحد ما المدينة تنام: من تشكيلة كبيرة من الباستا لحد الستيك والبتلو المميزين.",
+    s1:"تراس في الجنينة",s1p:"قعدة داخلية وخارجية",s2:"في المكان · تيك أواي",s2p:"دليفري من طلبات",s3:"لكل طاولة",s3p:"عائلات، أصحاب، شغل",tag:"مدينة نصر",
+    sigK:"الأشهر عندنا",sigT1:"حاجات",sigT2:"تستاهل تقعد عشانها",
+    c1k:"الحلويات",c1:"مولتن كيك وتيراميسو",c1p:"شوكولاتة سخنة وآيس كريم ساقع، وتيراميسو الناس بترجع عشانه.",
+    c2k:"بالليل",c2:"ميلك شيك كافالو",c2p:"طويل وساقع وكريم. معمول لسهرات التراس.",
+    c3k:"القهوة",c3:"قهوة مظبوطة",c3p:"لاتيه ناعم وقهوة تركي من الصبح لآخر الليل.",
+    menuK:"المنيو",menuT1:"من",menuT2:"مطبخنا",egp:"ج.م",
+    menuNote:"أسماء وأسعار البيتزا (بالجنيه) من منيو كافالو المطبوع. باقي الأقسام معاينة لهذا التصميم التجريبي وهتكمل بالمنيو الكامل.",
+    talabat:"اطلب من طلبات",navGallery:"الصور",galK:"الصور",galT1:"لحظات في",g0:"من جوه فرع عباس العقاد",
+    g1:"التراس بالليل",g2:"مولتن كيك وتيراميسو",g3:"العصاري في الجنينة",g4:"ميلك شيك بلوبيري",g5:"تحت لافتة كافالو",g6:"اللاتيه اللي الناس بتتكلم عنه",rating:"4.3 ★ · ١٬٦٥٧ تقييم على جوجل",quote:"«اللاتيه اللي شربته هناك من أحسن ما جربت.»",cite:"تقييم زائر · خرائط جوجل",
+    brK:"زورونا",brT1:"عنوانين،",brT2:"وكافالو واحد",b1:"حديقة الطفل",b1a:"حديقة الطفل، الحي السادس، مدينة نصر، القاهرة",
+    b2:"عباس العقاد",b2a:"ليفلز مول، عباس العقاد، مدينة نصر، القاهرة",addr:"العنوان",hours:"المواعيد",hoursV:"يومياً من ١٠ صباحاً لوقت متأخر",phone:"الهاتف",call:"اتصل",dir:"الاتجاهات",
+    resK:"الحجوزات",resT1:"طاولتك",resT2:"مستنياك",resP:"اختار الفرع والميعاد وعدد الأفراد، وطلبك هيوصلنا على واتساب ونأكده فوراً.",
+    fName:"الاسم",fBranch:"الفرع",fGuests:"عدد الأفراد",fDate:"التاريخ",fTime:"الوقت",fSend:"ابعت الطلب على واتساب",
+    fNote:"هيفتح واتساب والطلب جاهز. مفيش حاجة هتتبعت غير لما تدوس إرسال.",
+    demo:"تصميم تجريبي من محمد هشام · ليس الموقع الرسمي",
+    guest:n=>n===1?"فرد واحد":n+" أفراد",
+    msgHi:"أهلاً كافالو، عايز أحجز طاولة:",msgName:"الاسم",msgBranch:"الفرع",msgGuests:"عدد الأفراد",msgWhen:"الميعاد",
+    cats:{pizza:"بيتزا",italian:"باستا",grills:"مشويات وسي فود",oriental:"شرقي",desserts:"حلويات",drinks:"مشروبات"}}
+};
+/* pizza = Cavallo's printed menu; the rest is a preview */
+const MENU = {
+  pizza:[
+    {en:["Margherita","Cavallo sauce, mozzarella, oregano"],ar:["مارجريتا","كافالو صوص، موتزاريلا، أوريجانو"],p:215},
+    {en:["Pepperoni","Cavallo sauce, mozzarella, pepperoni"],ar:["بيبروني","كافالو صوص، موتزاريلا، بيبروني"],p:275},
+    {en:["Chicken BBQ","Chicken breast, mozzarella, barbecue sauce"],ar:["تشيكن باربكيو","صدور دجاج، موتزاريلا، باربكيو صوص"],p:260},
+    {en:["Chicken Ranch","Chicken breast, mozzarella, ranch dressing"],ar:["تشيكن رانش","صدور دجاج، موتزاريلا، رانش دريسنج"],p:260},
+    {en:["Quattro Formaggi","Mozzarella, cheddar, parmesan, blue cheese"],ar:["كواترو فورماجي","موتزاريلا، شيدر، بارميزان، بلو تشيز"],p:330},
+    {en:["Hawaii","Smoked turkey, pineapple, mozzarella"],ar:["هاواي","سموكد تركي، أناناس، موتزاريلا"],p:270},
+    {en:["Meat Lover","Beef bacon, pepperoni, minced beef"],ar:["ميت لافر","بيف بيكون، بيبروني، لحم مفروم"],p:300},
+    {en:["Sausage","Italian sausage, peppers, onion"],ar:["سوسيس","سجق إيطالي، فلفل، بصل"],p:240},
+    {en:["Tuna","Tuna, capers, onion, olives"],ar:["تونة","تونة، كابري، بصل، زيتون"],p:330},
+    {en:["Frutti di Mare","Calamari, shrimp, mussels, capers"],ar:["فروتي دي ماري","كاليماري، جمبري، بلح بحر، كابري"],p:335},
+    {en:["Cavallo","Pepperoni, chicken, cheddar, parmesan, blue cheese"],ar:["كافالو","بيبروني، دجاج، شيدر، بارميزان، بلو تشيز"],p:355,star:1},
+    {en:["Gampriti","Shrimp, capers, mozzarella, oregano"],ar:["جمبريتي","جمبري، كابري، موتزاريلا، أوريجانو"],p:470}
+  ],
+  italian:[
+    {en:["Fettuccine Alfredo","Creamy parmesan sauce, grilled chicken"],ar:["فيتوتشيني ألفريدو","صوص بارميزان كريمي ودجاج مشوي"],star:1},
+    {en:["Penne Arrabbiata","Spicy tomato, garlic, basil"],ar:["بيني أرابياتا","طماطم حارة، توم، ريحان"]},
+    {en:["Beef Lasagna","Slow-cooked ragù, béchamel, baked"],ar:["لازانيا باللحم","صوص لحم، بشاميل، في الفرن"]},
+    {en:["Pesto Pasta","Basil pesto, parmesan, pine nuts"],ar:["باستا بيستو","بيستو ريحان، بارميزان، صنوبر"]}
+  ],
+  grills:[
+    {en:["Grilled Beef Steak","Sautéed vegetables, mashed potato"],ar:["ستيك لحم مشوي","خضار سوتيه، بطاطس مهروسة"],star:1},
+    {en:["Mixed Grill","Kofta, shish tawook, lamb chops"],ar:["مشويات مشكلة","كفتة، شيش طاووق، ريش"]},
+    {en:["Grilled Shrimp","Garlic butter, lemon, rice"],ar:["جمبري مشوي","زبدة بالتوم، ليمون، أرز"]},
+    {en:["Signature Veal","Ask for today's cut and sauce"],ar:["بتلو كافالو","اسأل عن قطعة وصوص اليوم"],star:1}
+  ],
+  oriental:[
+    {en:["Lentil Soup","Lemon, cumin, crispy bread"],ar:["شوربة عدس","ليمون، كمون، عيش محمص"]},
+    {en:["Mezze Platter","Hummus, baba ghanoush, tahini, salads"],ar:["طبق مقبلات","حمص، بابا غنوج، طحينة، سلطات"]},
+    {en:["Molokhia","With chicken and vermicelli rice"],ar:["ملوخية","بالفراخ والأرز بالشعرية"]},
+    {en:["Fattah","Rice, bread, garlic tomato sauce, beef"],ar:["فتة","أرز، عيش، صلصة بالتوم، لحمة"]}
+  ],
+  desserts:[
+    {en:["Molten Lava Cake","Warm chocolate centre, vanilla ice cream"],ar:["مولتن كيك","قلب شوكولاتة سايح مع آيس كريم"],star:1},
+    {en:["Tiramisu","Mascarpone, espresso, cocoa"],ar:["تيراميسو","ماسكربوني، إسبريسو، كاكاو"],star:1},
+    {en:["Om Ali","Baked with nuts and cream"],ar:["أم علي","بالمكسرات والقشطة"]},
+    {en:["Chocolate Brownie","Warm, with ice cream"],ar:["براوني","سخنة مع آيس كريم"]}
+  ],
+  drinks:[
+    {en:["Latte","Silky milk, double espresso"],ar:["لاتيه","حليب ناعم وإسبريسو دبل"],star:1},
+    {en:["Turkish Coffee","Plain, medium or sweet"],ar:["قهوة تركي","سادة، مظبوط أو زيادة"]},
+    {en:["Blueberry Shake","Whipped cream, berry swirl"],ar:["ميلك شيك بلوبيري","كريمة وصوص توت"]},
+    {en:["Fresh Juices","Orange, mango, strawberry, lemon mint"],ar:["عصائر فريش","برتقان، مانجا، فراولة، ليمون نعناع"]}
+  ]
+};
+const BRANCHES=["b1","b2"];
+let lang="en", cat="pizza";
+const $=s=>document.querySelector(s);
+
+function applyLang(){
+  const t=T[lang];
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  $("#langBtn").textContent=lang==="ar"?"English":"العربية";
+  document.querySelectorAll("[data-i]").forEach(e=>{const v=t[e.dataset.i]; if(typeof v==="string")e.textContent=v;});
+  const words=t.marquee.map(w=>`<span>${w}</span>`).join("");
+  $("#mq").innerHTML=words+words+words+words;
+  const b=$("#fBranch").selectedIndex, g=$("#fGuests").selectedIndex;
+  $("#fBranch").innerHTML=BRANCHES.map(k=>`<option>${t[k]}</option>`).join("");
+  $("#fGuests").innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">${t.guest(i+1)}</option>`).join("");
+  $("#fBranch").selectedIndex=Math.max(0,b); $("#fGuests").selectedIndex=g<0?1:g;
+  renderTabs(); renderMenu(false);
+}
+function renderTabs(){
+  $("#tabs").innerHTML=Object.keys(MENU).map(k=>
+    `<button class="tab" role="tab" aria-selected="${k===cat}" data-k="${k}">${T[lang].cats[k]}</button>`).join("");
+  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>setCat(b.dataset.k));
+}
+function setCat(k){ if(k===cat)return; cat=k; renderTabs(); renderMenu(true); }
+function renderMenu(animate){
+  const t=T[lang], el=$("#dishes");
+  const draw=()=>{el.innerHTML=MENU[cat].map(i=>`
+    <div class="dish"><div class="top"><h3>${i[lang][0]}${i.star?'<span class="star">✦</span>':""}</h3><span class="dots"></span>${i.p?`<span class="price">${i.p}<small>${t.egp}</small></span>`:""}</div><p>${i[lang][1]}</p></div>`).join("");
+    el.classList.remove("fade");};
+  if(!animate) return draw();
+  el.classList.add("fade"); setTimeout(draw,300);
+}
+$("#langBtn").onclick=()=>{lang=lang==="en"?"ar":"en";applyLang();};
+document.querySelectorAll(".card[data-cat]").forEach(c=>c.addEventListener("click",()=>setCat(c.dataset.cat)));
+
+const today=new Date().toISOString().slice(0,10);
+$("#fDate").min=today; $("#fDate").value=today;
+$("#bookForm").onsubmit=e=>{
+  e.preventDefault();
+  const t=T[lang];
+  const msg=[t.msgHi,`${t.msgName}: ${$("#fName").value.trim()}`,`${t.msgBranch}: ${$("#fBranch").value}`,
+    `${t.msgGuests}: ${$("#fGuests").value}`,`${t.msgWhen}: ${$("#fDate").value} ${$("#fTime").value}`].join("\n");
+  window.open(`https://wa.me/${BOOKING_PHONE}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+};
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}}),{threshold:.15});
+document.querySelectorAll(".rv,.rv-img").forEach(e=>io.observe(e));
+
+/* header state + gentle parallax on the quote band */
+const hdr=$("#hdr"), band=$(".band"), bandBg=$("#bandBg");
+const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function onScroll(){
+  hdr.classList.toggle("solid",scrollY>40);
+  if(still)return;
+  const r=band.getBoundingClientRect();
+  if(r.bottom>0&&r.top<innerHeight){const p=(r.top+r.height/2-innerHeight/2)/innerHeight; bandBg.style.transform=`translateY(${(p*-12).toFixed(2)}%)`;}
+}
+addEventListener("scroll",onScroll,{passive:true}); onScroll();
+applyLang();
+
+/* preloader: hold at least ~1.4s so the crest lands, never more than 3.5s */
+const t0=performance.now();
+function lift(){
+  if(document.documentElement.classList.contains("loaded"))return;
+  setTimeout(()=>{$("#loader").classList.add("done");document.documentElement.classList.add("loaded");countUp();},Math.max(0,1400-(performance.now()-t0)));
+}
+if(still)lift(); else{addEventListener("load",lift); setTimeout(lift,3500);}
+
+/* hero numbers count up, keeping their suffix ("★", "+") */
+function countUp(){
+  document.querySelectorAll(".hero-meta b").forEach(b=>{
+    const m=b.textContent.match(/^([\d.,]+)(.*)$/); if(!m||still)return;
+    const end=parseFloat(m[1].replace(/,/g,"")), dec=(m[1].split(".")[1]||"").length, t1=performance.now();
+    const step=now=>{const k=Math.min(1,(now-t1)/1600), v=end*(1-Math.pow(1-k,3));
+      b.textContent=v.toLocaleString("en-US",{minimumFractionDigits:dec,maximumFractionDigits:dec})+m[2];
+      if(k<1)requestAnimationFrame(step);};
+    requestAnimationFrame(step);
+  });
+}
+
+/* scroll progress, floating WhatsApp, collage parallax */
+const prog=$("#progress"), fab=$("#fab"), small=$(".collage .small"), big=$(".collage .big");
+addEventListener("scroll",()=>{
+  const max=document.documentElement.scrollHeight-innerHeight;
+  prog.style.setProperty("--p",(scrollY/max).toFixed(4));
+  fab.classList.toggle("show",scrollY>innerHeight*.8);
+  if(!still){const r=big.getBoundingClientRect(), p=(r.top+r.height/2-innerHeight/2)/innerHeight;
+    small.style.transform=`translateY(${(p*-60).toFixed(1)}px)`;}
+},{passive:true});
+
+/* mobile menu */
+const burger=$("#burger");
+const setMenu=open=>{document.documentElement.classList.toggle("menu-open",open);burger.setAttribute("aria-expanded",open);};
+burger.onclick=()=>setMenu(!document.documentElement.classList.contains("menu-open"));
+document.querySelectorAll("#mnav a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+
+/* gallery: drag to scroll, arrows, lightbox */
+const strip=$("#strip"), items=[...strip.querySelectorAll(".g-item")];
+let down=null, moved=0;
+strip.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;down={x:e.clientX,s:strip.scrollLeft};moved=0;strip.classList.add("drag");});
+addEventListener("pointermove",e=>{if(!down)return;moved=Math.abs(e.clientX-down.x);strip.scrollLeft=down.s-(e.clientX-down.x);});
+addEventListener("pointerup",()=>{down=null;strip.classList.remove("drag");});
+const page=d=>strip.scrollBy({left:d*strip.clientWidth*.6*(document.documentElement.dir==="rtl"?-1:1),behavior:"smooth"});
+$("#galPrev").onclick=()=>page(-1); $("#galNext").onclick=()=>page(1);
+const lb=$("#lb"); let cur=0;
+const show=i=>{cur=(i+items.length)%items.length;const im=items[cur].querySelector("img");$("#lbImg").src=im.src;$("#lbImg").alt=im.alt;$("#lbCap").textContent=items[cur].querySelector("figcaption").textContent;};
+items.forEach((it,i)=>it.addEventListener("click",()=>{if(moved>6)return;show(i);lb.classList.add("open");}));
+$("#lbX").onclick=()=>lb.classList.remove("open");
+$("#lbPv").onclick=()=>show(cur-1); $("#lbNx").onclick=()=>show(cur+1);
+lb.addEventListener("click",e=>{if(e.target===lb)lb.classList.remove("open");});
+addEventListener("keydown",e=>{
+  if(e.key==="Escape"){lb.classList.remove("open");setMenu(false);}
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="ArrowRight")show(cur+1); if(e.key==="ArrowLeft")show(cur-1);
+});
+
+/* gold cursor that trails the pointer and swells over anything clickable */
+const cur$=$("#cursor");
+if(matchMedia("(hover:hover) and (pointer:fine)").matches&&!still){
+  let mx=0,my=0,cx=0,cy=0;
+  addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;cur$.classList.add("on");});
+  document.addEventListener("mouseleave",()=>cur$.classList.remove("on"));
+  addEventListener("mouseover",e=>cur$.classList.toggle("big",!!e.target.closest("a,button,.g-item,.card,select,input")));
+  (function loop(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;cur$.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(loop);})();
+}
+</script>
+</body>
+</html>
